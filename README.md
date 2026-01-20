@@ -1,4 +1,4 @@
-# JebWine Password Manager
+# Sonjeev's Password Manager
 
 A modern, secure, and intuitive desktop application for managing your credentials. Built with Python using Tkinter for the GUI and SQLite for local data storage.
 
