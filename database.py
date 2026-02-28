@@ -14,6 +14,24 @@ def init_db():
     conn.commit()
     conn.close()
 
+def check_duplicate(website, username, exclude_id=None):
+    """Return True if (website, username) pair already exists."""
+    conn = sqlite3.connect('passwords.db')
+    cursor = conn.cursor()
+    if exclude_id is not None:
+        cursor.execute(
+            'SELECT id FROM passwords WHERE LOWER(website)=LOWER(?) AND LOWER(username)=LOWER(?) AND id != ?',
+            (website, username, exclude_id)
+        )
+    else:
+        cursor.execute(
+            'SELECT id FROM passwords WHERE LOWER(website)=LOWER(?) AND LOWER(username)=LOWER(?)',
+            (website, username)
+        )
+    row = cursor.fetchone()
+    conn.close()
+    return row is not None
+
 def add_password(website, username, password):
     conn = sqlite3.connect('passwords.db')
     cursor = conn.cursor()
