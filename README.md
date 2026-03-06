@@ -58,4 +58,4 @@ python main.py
 The application features a dedicated sidebar for data entry and an expanded credential table on the right. Passwords are always masked in the table and can only be revealed on demand per row.
 
 ---
-*Created as part of the BSIT 2 C project.*
+
