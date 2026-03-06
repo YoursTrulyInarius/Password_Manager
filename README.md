@@ -58,4 +58,5 @@ python main.py
 The application features a dedicated sidebar for data entry and an expanded credential table on the right. Passwords are always masked in the table and can only be revealed on demand per row.
 
 ---
+needed to add proper error handling.
 
